@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page title</title>
+</head>
+<body>
+    <img Id="bird" src="Access_Lost.png">
+   <div class="a game"> </div><div class="b game"> </div><div class="c game"> </div><div class="d game"> </div><div class="e game"> </div><div class="f game"> </div>
+    
+    <div class="ground"><div class="controlsForward"><button onClick="move()">Forward</button>
+    <button onclick="reverseMove()" Id="backward">Backward</button></div></div>
+    
+    
+    <style>
+        .a{
+        background:#ff0036;
+            height:50px;
+            width:50px;
+           
+        }
+         .b{
+        background:#ff00f3;
+            height:50px;
+            width:50px;
+           
+        }
+         .c{
+        background:#2a6eff;
+            height:50px;
+            width:50px;
+            }
+            .d{
+        background:#2aff58;
+            height:50px;
+            width:50px;
+            }
+            .e{
+        background:#bbff00;
+            height:50px;
+            width:50px;
+            }
+            .f{
+        background:#f5d5ff;
+            height:50px;
+            width:50px;
+            }
+           
+        .game{
+            display:inline-block;
+            position:relative;
+            top:300px;
+        }
+        #bird{
+            width:20px;
+           position:absolute;
+           top:289px;
+           left:2px;
+        }
+        .controlsForward{
+            text-align:center;
+            position:relative;
+            top:40px;
+            
+        }
+        body{
+            background:skyblue;
+            z-index:-10;
+        }
+       .ground{
+       width:100%;
+       height:200px;
+        position:absolute;
+        top:357px;
+        
+        z-index:-2;
+            background:brown;
+        }
+    </style>
+    <script>
+        
+        function move() {
+    var bird = document.getElementById("bird");
+    var currentPosition = parseInt(bird.style.left) || 0; // Get current position or default to 0
+    var newPosition = currentPosition + 5; // Adjust the value as needed
+
+    bird.style.left = newPosition + "px";
+}
+function reverseMove(){
+    var bird = document.getElementById("bird");
+    var currentPosition = parseFloat(bird.style.left);
+    var newPosition=currentPosition-5;
+    bird.style.left = newPosition+"px";
+    
+}
+
+       
+    </script>
+</body>
+</html>
